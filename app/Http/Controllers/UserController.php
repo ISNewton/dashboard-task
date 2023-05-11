@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -35,6 +36,7 @@ class UserController extends Controller
         $data = $request->validated();
 
         $data['password'] = Hash::make($request->password);
+        $data['image'] = Storage::put('users', $request->file('image'));
 
         User::create($data);
 

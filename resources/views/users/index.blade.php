@@ -7,6 +7,7 @@
                 <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
                     <h6>Users table</h6>
                 </div>
+                <a class="mr-12 rouned-2 bg-red-500 text-black text-right" href="{{ route('users.create') }}">Add</a>
                 <div class="flex-auto px-0 pt-0 pb-2">
                     <div class="p-0 overflow-x-auto">
                         <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
@@ -15,7 +16,10 @@
                                     <th
                                         class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         ID</th>
-                                    <th
+                                        <th
+                                        class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Image</th>
+                                        <th
                                         class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                         Name</th>
                                     <th
@@ -35,6 +39,12 @@
                                             class="p-2 text-center  align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                             <span class="text-m font-semibold leading-tight text-slate-400">
                                                 {{ $user->id }}
+                                            </span>
+                                        </td>
+                                        <td
+                                            class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                            <span class="text-m font-semibold leading-tight text-slate-400">
+                                                <img width="80" height="80"  src="{{ $user->imagePath }}" alt="User image">
                                             </span>
                                         </td>
                                         <td
