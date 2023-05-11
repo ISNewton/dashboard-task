@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
 @section('content')
-    hisdhfiosdjfl
+    <h1>Welcome Back!</h1>
 @endsection
