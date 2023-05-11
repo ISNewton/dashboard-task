@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Client;
 use App\Models\Project;
+use App\Models\Task;
 
 class ProjectController extends Controller
 {
@@ -23,7 +25,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects/create');
+        $clients = Client::all('id', 'email');
+        $tasks = Task::all('id', 'name');
+        return view('projects/create' , compact('clients' , 'tasks'));
     }
 
     /**
@@ -49,7 +53,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects/edit' , compact('project'));
+        $clients = Client::all('id', 'email');
+        return view('projects/edit', compact('project' , 'clients'));
     }
 
     /**

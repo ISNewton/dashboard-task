@@ -24,6 +24,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'name' => ['required', Rule::unique('projects', 'name')],
+            'client_id' => ['required', Rule::exists('clients','id')],
         ];
     }
 }

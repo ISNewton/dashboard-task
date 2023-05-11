@@ -20,6 +20,17 @@
                     class="p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                     placeholder="Example" required>
             </div>
+
+            <div class="mb-6">
+                <label for="client_id" class="block mb-2 text-sm font-medium text-gray-900">Client</label>
+
+                <select class="p-2" name="client_id" id="">
+                    @foreach ($clients as $client)
+                            <option {{ $client->id == $project->client_id ? 'selected' : '' }} value="{{ $client->id }}">{{ $client->email }}</option>
+                    @endforeach
+                </select>
+
+            </div>
     </div>
 
     <button type="submit"

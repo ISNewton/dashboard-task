@@ -25,4 +25,8 @@ class Client extends Model
         return asset('storage/' . $this->image);
     }
 
+    public function project() {
+        return $this->hasOne(Project::class);
+    }
+
 }

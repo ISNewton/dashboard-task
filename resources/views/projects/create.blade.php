@@ -21,6 +21,17 @@
                     placeholder="Example" required>
             </div>
 
+            <div class="mb-6">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Client</label>
+
+                <select class="p-2" name="client_id" id="">
+                    @foreach ($clients as $client)
+                            <option value="{{ $client->id }}">{{ $client->email }}</option>
+                    @endforeach
+                </select>
+
+            </div>
+
             <button type="submit"
                 class="text-black bg-blue-500  focus:ring-4
                  focus:outline-none focus:ring-blue-300 font-medium
