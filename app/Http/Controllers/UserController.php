@@ -72,6 +72,11 @@ class UserController extends Controller
             unset($data['password']);
         }
 
+        if ($request->hasFile('image')) {
+            Storage::delete($user->image);
+            $data['image'] = Storage::put('users', $request->file('image'));
+        }
+
         $user->update($data);
 
         return redirect(route('users.index'));

@@ -3,7 +3,7 @@
 @section('content')
     <div class="bg-white p-6">
 
-        <form method="post" action="{{ route('users.update', $user->id) }}">
+        <form method="post" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data">
             @csrf
             @method('put')
 
@@ -31,6 +31,12 @@
                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
                 <input type="password" id="password" name="password"
                     class="p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            </div>
+
+            <div class="mb-6">
+                <label for="image" class="block mb-2 text-sm font-medium text-gray-900">image</label>
+                <input type="file" id="image" name="image"
+                     >
             </div>
 
             <button type="submit"
